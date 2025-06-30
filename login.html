@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Login SIBIMA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(-45deg, #003366, #005580, #00cc99, #003366);
+      background-size: 400% 400%;
+      animation: bgAnim 15s ease infinite;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @keyframes bgAnim {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .login-box {
+      background: #fff;
+      padding: 40px;
+      border-radius: 15px;
+      width: 320px;
+      text-align: center;
+      box-shadow: 0 15px 25px rgba(0,0,0,0.25), 0 0 10px rgba(0,204,153,0.3);
+      animation: fadeInUp 1s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .login-box:hover {
+      transform: scale(1.02);
+      box-shadow: 0 20px 30px rgba(0,0,0,0.3), 0 0 15px rgba(0,204,153,0.4);
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .login-box h2 {
+      margin-bottom: 20px;
+      color: #003366;
+    }
+
+    input {
+      margin: 10px 0;
+      padding: 12px;
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      transition: border 0.3s ease;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #00cc99;
+      box-shadow: 0 0 5px #00cc99;
+    }
+
+    button {
+      margin-top: 15px;
+      background: #003366;
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #005580;
+    }
+
+    a {
+      display: block;
+      margin-top: 15px;
+      color: #005580;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #00cc99;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2>Login SIBIMA</h2>
+    <input type="text" id="username" placeholder="NIM / NIP">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+  </div>
+
+  <script>
+    function login() {
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      if (username === "2205903040045" && password === "12345678") {
+        window.location.href = "dashboard-mahasiswa.html";
+      } else if (username === "12345678" && password === "dosen123") {
+        window.location.href = "dashboard-dosen.html";
+      } else {
+        alert("NIM/NIP atau password salah!");
+      }
+    }
+  </script>
+</body>
+</html>

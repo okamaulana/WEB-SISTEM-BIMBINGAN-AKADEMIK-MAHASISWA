@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard Mahasiswa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(120deg, #003366, #006699);
+      min-height: 100vh;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      padding: 60px 20px;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 40px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+      animation: fadeDown 1s ease-out;
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      width: 100%;
+      max-width: 900px;
+      animation: fadeUp 1.2s ease;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card {
+      background: #fff;
+      color: #003366;
+      padding: 30px 20px;
+      border-radius: 15px;
+      text-align: center;
+      font-weight: bold;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      width: 300%;
+      height: 300%;
+      background: rgba(0, 204, 153, 0.05);
+      top: -100%;
+      left: -100%;
+      transform: rotate(45deg);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover::before {
+      top: 0;
+      left: 0;
+    }
+
+    .card:hover {
+      transform: translateY(-5px) scale(1.03);
+      background: #00cc99;
+      color: #fff;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .card span {
+      display: block;
+      font-size: 2em;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎓 Dashboard Mahasiswa SIBIMA</h1>
+  <div class="menu">
+    <div class="card" onclick="window.location.href='upload.html'">
+      <span>📤</span>
+      Upload Laporan
+    </div>
+    <div class="card" onclick="window.location.href='riwayat.html'">
+      <span>📑</span>
+      Riwayat Bimbingan
+    </div>
+    <div class="card" onclick="window.location.href='verifikasi2.html'">
+      <span>✅</span>
+      Status Verifikasi
+    </div>
+  </div>
+</body>
+</html>
